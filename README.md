@@ -110,7 +110,7 @@ The repository structure will look like:
 
 ```text
 github-actions-python-demo/
-├──
+├── README.md
 ├── app.py
 │
 └── .github/
@@ -118,12 +118,86 @@ github-actions-python-demo/
         └── action.yml
 ```
 
+## 🟢 Step 4: Create the Workflow
 
+Open:
 
+.github/workflows/action.yml
 
+Add the following code:
+```text
+name: Python App Action
 
+on:
+  push:
+    branches:
+      - main
 
+jobs:
+  perform-action:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Perform Action
+        run: echo "Python app code was updated!"
+```
+Commit the changes.
+
+## 🟡 Step 5: Understand the Workflow
+
+### `name`
+
+1. Defines the name of the GitHub Actions workflow.
+2. Here, the workflow name is **Python App Action**.
+
+### `on`
+
+1. Defines when the workflow should be triggered.
+2. Here, it triggers whenever code is **pushed to the `main` branch**.
+
+### `jobs`
+
+1. Defines the job that GitHub Actions will perform.
+2. Here, the job name is **`perform-action`**.
+
+### `runs-on`
+
+1. Defines the environment where the job will run.
+2. Here, the job runs on a **GitHub-hosted Ubuntu runner**.
+
+### `Checkout Code`
+
+1. Downloads/checks out the latest repository code to the runner.
+2. Uses **`actions/checkout@v4`**.
+
+### `Perform Action`
+
+1. Executes a command on the runner.
+2. Here, it prints **`Python app code was updated!`** in the workflow logs.
+
+### What is a Runner?
+A runner is a machine/server that executes the GitHub Actions job.
+It runs the commands and steps defined in the workflow.
+Here, ubuntu-latest means GitHub provides an Ubuntu-based machine for running the job.
+GitHub automatically creates/provides this runner when the workflow starts and removes it after the job finishes.
+
+## 🟠 Step 6: Make a Change in the Python App
+
+1. Open: app.py
+
+2. Change:
+```text
+return "Hello, this is my Python App!"
+
+to:
+
+return "Hello, my Python App was updated!"
+```
+
+3. Commit the change to the main branch.
 
 
 
