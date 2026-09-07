@@ -200,11 +200,88 @@ return "Hello, my Python App was updated!"
 3. Commit the change to the main branch.
 <img width="815" height="461" alt="image" src="https://github.com/user-attachments/assets/1f1497ca-c65d-49f4-9a13-54a387638ce9" />
 
+## 🔥 Step 7: GitHub Actions Gets Triggered
+As soon as the change is committed to the main branch:
+
+```text
+Code Change
+     ↓
+Commit to main
+     ↓
+GitHub Detects Push
+     ↓
+GitHub Actions Triggered
+     ↓
+Ubuntu Runner Starts
+     ↓
+Workflow Executes
+     ↓
+Command Runs
+```
+The workflow will automatically start because we configured:
+```text
+on:
+  push:
+    branches:
+      - main
+```
+
+## 🟣 Step 8: Check GitHub Actions
+1. Go to your GitHub repository.
+2. Click:
+
+   Actions → Python App Action
+
+3. Then open the workflow run.
+
+4. Click:
+
+   perform-action
+   <img width="1056" height="636" alt="image" src="https://github.com/user-attachments/assets/5c0175ec-bba4-480c-857b-230c197f12b4" />
 
 
+You can see all the steps executed by the runner.
 
+<img width="1605" height="760" alt="image" src="https://github.com/user-attachments/assets/c2b8ac22-6476-4858-b979-a0556510f3fe" />
 
+## 📝 Step 9: Check the Output
+In the workflow logs, you should see:
+```text
+Python app code was updated!
+```
 
+<img width="1897" height="940" alt="image" src="https://github.com/user-attachments/assets/40958e1c-ca40-4962-9f91-07cb2f319a3c" />
+
+This confirms that the GitHub Actions workflow was successfully triggered and the defined action was executed.
+
+## Complete Working Flow
+
+```text
+Developer
+    ↓
+Modify app.py
+    ↓
+Commit Changes
+    ↓
+Push to main
+    ↓
+GitHub Repository
+    ↓
+GitHub Actions Trigger
+    ↓
+GitHub-hosted Ubuntu Runner
+    ↓
+Checkout Code
+    ↓
+Execute Command
+    ↓
+"Python app code was updated!"
+    ↓
+View Logs
+```
+
+### Overall, this project gave me practical experience with **CI workflows, automation, runners, triggers, and GitHub-based DevOps practices**.
+Cheers and Happy Coding :)
 
 
 
