@@ -1,0 +1,17 @@
+name: Python App Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  perform-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Perform Action
+        run: echo "Python app code was updated!"
