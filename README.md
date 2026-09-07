@@ -84,6 +84,49 @@ if __name__ == "__main__":
 
 Commit the changes.
 
+### What does this application do?
+
+This is a simple Flask web application. When the application runs on:
+
+```text
+http://localhost:5000
+```
+it displays:
+
+```text
+Hello, this is my Python App!
+```
+
+This application is only being used as a demo application for learning GitHub Actions.
+
+## 🟢 Step 3: Create GitHub Actions Workflow
+
+Inside the same GitHub repository, create:
+```text
+.github/workflows/action.yml
+```
+
+The repository structure will look like:
+
+```text
+github-actions-python-demo/
+├──
+├── app.py
+│
+└── .github/
+    └── workflows/
+        └── action.yml
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
