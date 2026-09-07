@@ -198,6 +198,8 @@ return "Hello, my Python App was updated!"
 ```
 
 3. Commit the change to the main branch.
+<img width="815" height="461" alt="image" src="https://github.com/user-attachments/assets/1f1497ca-c65d-49f4-9a13-54a387638ce9" />
+
 
 
 
